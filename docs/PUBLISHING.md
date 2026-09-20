@@ -36,7 +36,7 @@ Production target is an external web host, initially the college infrastructure 
 Planned pipeline:
 
 ```text
-private GitHub
+public GitHub
   -> validate
   -> build Slidev
   -> verify output
