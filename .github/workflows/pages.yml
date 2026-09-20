@@ -37,8 +37,9 @@ jobs:
       - name: Prepare Pages artifact
         run: |
           mkdir -p site
-          cp -R dist/P001 site/P001
-          cp dist/P001/index.html site/index.html
+          mkdir -p site/P001
+          cp -R dist/. site/P001/
+          cp dist/index.html site/index.html
           touch site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
