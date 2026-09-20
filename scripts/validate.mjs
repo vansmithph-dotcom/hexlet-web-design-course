@@ -27,7 +27,9 @@ for (const file of required) {
 
 if (!failed) {
   const p001 = readFileSync('lessons/P001/slides.md', 'utf8');
-  const p001Slides = p001.split('\n---\n').length;
+  // Git may check Markdown out with either LF or CRLF line endings.
+  // Count Slidev separators without depending on the platform newline style.
+  const p001Slides = p001.split(/\r?\n---\r?\n/).length;
   if (!p001.includes('lesson: P001') || p001Slides < 15) {
     console.error('INVALID: P001 must identify lesson P001 and contain at least 15 slides');
     failed = true;

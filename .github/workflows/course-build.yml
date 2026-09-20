@@ -24,7 +24,15 @@ jobs:
           node-version: 22
       - run: npm install
       - run: npm run build:all
+      - name: Verify static course output
+        shell: bash
+        run: |
+          test -f dist/P001/index.html
+          test -f dist/P026/index.html
+          test -f dist/master/index.html
       - uses: actions/upload-artifact@v4
         with:
           name: course-build
           path: dist/
+          if-no-files-found: error
+          retention-days: 14

@@ -3,13 +3,13 @@
   "private": true,
   "scripts": {
     "dev:p026": "slidev lessons/P026/slides.md --open",
-    "build:p026": "slidev build lessons/P026/slides.md --out dist/P026",
-    "export:p026": "slidev export lessons/P026/slides.md --output dist/P026.pdf",
+    "build:p026": "slidev build lessons/P026/slides.md --out ../../dist/P026",
+    "export:p026": "slidev export lessons/P026/slides.md --output ../../dist/P026.pdf",
     "validate": "node scripts/validate.mjs",
     "dev:master": "slidev templates/master/slides.md --open",
-    "build:master": "slidev build templates/master/slides.md --out dist/master",
+    "build:master": "slidev build templates/master/slides.md --out ../../dist/master",
     "dev:p001": "slidev lessons/P001/slides.md --open",
-    "build:p001": "slidev build lessons/P001/slides.md --base /course/pm1/P001/ --out dist/P001",
+    "build:p001": "slidev build lessons/P001/slides.md --base /course/pm1/P001/ --out ../../dist/P001",
     "build:all": "npm run validate && npm run build:master && npm run build:p001 && npm run build:p026"
   },
   "devDependencies": {

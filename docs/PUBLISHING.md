@@ -24,6 +24,10 @@ The host/domain can change without changing the lesson package structure.
 ## Staging
 Every build is validated and reviewed before production. The existing `Build course` workflow uploads `dist/` as the `course-build` artifact for inspection or deployment.
 
+The workflow verifies `dist/P001/index.html`, `dist/P026/index.html`, and
+`dist/master/index.html` before upload. Missing output fails the build; a green
+workflow without an artifact is not a successful course build.
+
 ## Production
 GitHub Pages is intentionally not used: the repository is private and the current GitHub plan does not enable Pages for this repository.
 
