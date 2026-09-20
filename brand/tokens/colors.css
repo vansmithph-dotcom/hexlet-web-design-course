@@ -1,0 +1,14 @@
+:root {
+  --hexlet-ink: #151618;
+  --hexlet-paper: #EEEEEC;
+  --hexlet-primary: #433EFF;
+  --hexlet-graphite: #414141;
+  --hexlet-muted: #C7C7C7;
+  --hexlet-accent-violet: #D16FFF;
+  --hexlet-accent-cyan: #00C2FF;
+
+  --surface-primary: var(--hexlet-ink);
+  --text-primary: var(--hexlet-paper);
+  --text-secondary: var(--hexlet-muted);
+  --accent-primary: var(--hexlet-primary);
+}
