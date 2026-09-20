@@ -1,0 +1,30 @@
+name: Build course
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "lessons/P001/**"
+      - "templates/master/**"
+      - "theme/**"
+      - "brand/**"
+      - "package.json"
+      - "scripts/**"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - run: npm run build:all
+      - uses: actions/upload-artifact@v4
+        with:
+          name: course-build
+          path: dist/
