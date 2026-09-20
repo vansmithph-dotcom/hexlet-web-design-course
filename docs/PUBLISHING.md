@@ -1,7 +1,7 @@
 # Publishing model
 
 ## Source of truth
-The repository remains private. GitHub stores course sources, lesson metadata, assets, validation rules, and build automation. Students do not need GitHub access.
+The repository is public so GitHub Pages can publish the compiled course. GitHub stores course sources, lesson metadata, assets, validation rules, and build automation. Student personal data, submissions, grades, and credentials are never stored here.
 
 ## Build
 GitHub Actions validates the course and builds static lesson output into `dist/`.
@@ -9,7 +9,7 @@ GitHub Actions validates the course and builds static lesson output into `dist/`
 Pilot target:
 
 ```text
-dist/P001/
+dist/course/pm1/P001/
 └── index.html + Slidev assets
 ```
 
@@ -24,12 +24,12 @@ The host/domain can change without changing the lesson package structure.
 ## Staging
 Every build is validated and reviewed before production. The existing `Build course` workflow uploads `dist/` as the `course-build` artifact for inspection or deployment.
 
-The workflow verifies `dist/P001/index.html`, `dist/P026/index.html`, and
-`dist/master/index.html` before upload. Missing output fails the build; a green
+The workflow verifies `dist/course/pm1/P001/index.html`, `dist/P026/index.html`,
+`dist/master/index.html`, and the root `dist/index.html` before upload. Missing output fails the build; a green
 workflow without an artifact is not a successful course build.
 
 ## Production
-GitHub Pages is intentionally not used: the repository is private and the current GitHub plan does not enable Pages for this repository.
+GitHub Pages publishes the validated `dist/` directory from the `main` branch workflow. The public pilot URL is `/hexlet-web-design-course/course/pm1/P001/` under the account Pages domain.
 
 Production target is an external web host, initially the college infrastructure when access is available. Deployment credentials must be stored only in GitHub Secrets or a protected GitHub Environment.
 
