@@ -3,6 +3,7 @@ theme: default
 title: "П001 — Безопасность на рабочем месте"
 aspectRatio: 16/9
 lesson: P001
+css: ../../theme/styles/index.css
 ---
 
 <div class="hx-eyebrow">Хекслет Колледж · ПМ1 · Сканирование и обработка графической информации</div>
