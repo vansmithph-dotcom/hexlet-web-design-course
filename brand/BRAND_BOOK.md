@@ -43,3 +43,6 @@ The Kazakhstan college logo from hexly.kz is the required mark for this course. 
 
 ## Status
 The logo asset itself is pending a verified extraction/import from the official hexly.kz source. Until then, no substitute logo is committed.
+
+## Current implementation phase
+Production templates and P001 are intentionally logo-free for now. Space for the Kazakhstan college identity may be introduced later after the exact approved vector asset is verified. The absence of the logo must not block layout, content, validation, or publishing work.
