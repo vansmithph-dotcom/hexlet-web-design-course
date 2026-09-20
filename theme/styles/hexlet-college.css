@@ -8,6 +8,97 @@
   position: relative;
 }
 
+.slidev-layout::after {
+  content: "Хекслет Колледж";
+  position: absolute;
+  top: 26px;
+  right: 38px;
+  color: var(--hexlet-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hx-cover::after { display: none; }
+
+.hx-cover {
+  padding-right: 54%;
+  overflow: hidden;
+}
+
+.hx-cover-image {
+  position: absolute;
+  inset: 0 0 0 47%;
+  width: 53%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hx-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+}
+
+.hx-brand-lockup img { width: 162px; height: 24px; }
+
+.hx-photo-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.hx-photo-strip img,
+.hx-photo-pair img,
+.hx-split-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.hx-photo-strip figure { margin: 0; }
+.hx-photo-strip img { height: 190px; }
+.hx-photo-strip figcaption { margin-top: 10px; font-size: 16px; line-height: 1.3; }
+
+.hx-photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.hx-photo-pair img { height: 130px; }
+.hx-photo-pair h3 { margin-top: 8px; font-size: 20px; }
+.hx-photo-pair p { margin-top: 2px; font-size: 16px; line-height:1.2; }
+
+.slidev-layout:has(.hx-photo-pair) h1 { font-size: 36px; max-width: none; }
+.slidev-layout:has(.hx-photo-pair) .hx-why { font-size: 64px; }
+.hx-grid-4 .hx-card { padding: 20px; }
+.hx-grid-4 .hx-card p { font-size: 20px; line-height: 1.3; }
+.slidev-layout:has(.hx-grid-2) h1 { font-size:42px; max-width:none; }
+.hx-grid-2 .hx-card { padding:20px; }
+.hx-grid-2 .hx-card h2 { font-size:30px; }
+.hx-grid-2 .hx-card p { font-size:20px; line-height:1.35; }
+.slidev-layout:has(.hx-check) h1 { font-size:42px; max-width:none; }
+.hx-check { padding:8px 0; }
+.hx-check h3 { margin:0; font-size:22px; }
+.hx-check p { margin:2px 0 0; font-size:18px; line-height:1.25; }
+
+.hx-split-photo {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 36px;
+  align-items: stretch;
+  margin-top: 28px;
+}
+
+.hx-split-photo > img { height: 390px; }
+.hx-split-photo .hx-card { display: flex; flex-direction: column; justify-content: center; }
+.hx-signal { color: var(--hexlet-signal); }
+.hx-number { background: var(--hexlet-signal); }
+.hx-callout { border-left-color: var(--hexlet-signal); }
+.hx-footer::before { background: var(--hexlet-signal); }
+
 .slidev-layout h1,
 .slidev-layout h2,
 .slidev-layout h3 {
@@ -94,6 +185,8 @@
     var(--hexlet-ink);
 }
 
-.hx-cover .hx-cover-title { max-width:850px; margin-top:80px; }
-.hx-cover .hx-cover-title h1 { font-size:64px; }
+.hx-cover .hx-cover-title { max-width:620px; margin-top:36px; }
+.hx-cover .hx-cover-title h1 { font-size:34px; line-height:1.02; }
+.hx-cover .hx-cover-title p { margin-top:18px; font-size:16px; line-height:1.25; max-width:560px; }
+.hx-cover .hx-course-line { display:none; }
 .hx-cover .hx-course-line { margin-top:28px; color:var(--hexlet-muted); font-size:18px; }

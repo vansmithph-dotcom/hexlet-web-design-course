@@ -40,6 +40,7 @@ jobs:
         shell: bash
         run: |
           test -f dist/index.html
+          test -f dist/404.html
           test -f dist/course/pm1/P001/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

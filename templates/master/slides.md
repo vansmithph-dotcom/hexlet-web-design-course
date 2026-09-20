@@ -3,7 +3,6 @@ theme: default
 title: "Hexlet College — Master Lesson Template"
 aspectRatio: 16/9
 class: hx-master
-css: ../../theme/styles/index.css
 ---
 
 <div class="hx-eyebrow">Хекслет Колледж · ПМ1</div>
