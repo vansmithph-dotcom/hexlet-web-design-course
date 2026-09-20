@@ -1,0 +1,15 @@
+id: P001
+title: "Безопасность на рабочем месте при работе с графическим оборудованием"
+module: PM1
+ro: "РО 1.1"
+duration_minutes: 60
+status: draft
+content:
+  slides: slides.md
+  teacher: teacher.md
+  student: student.md
+  practice: practice.md
+  quiz: quiz.yml
+assets: assets/
+moodle:
+  publish: false
