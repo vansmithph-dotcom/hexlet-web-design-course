@@ -1,0 +1,14 @@
+id: P026
+title: "Photoshop: базовые операции"
+module: PM1
+duration_minutes: 60
+status: scaffold
+content:
+  slides: slides.md
+  teacher: teacher.md
+  student: student.md
+  practice: practice.md
+  quiz: quiz.yml
+assets: assets/
+moodle:
+  publish: false
