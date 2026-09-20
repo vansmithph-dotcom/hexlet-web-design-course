@@ -28,4 +28,9 @@ if (!existsSync('dist/404.html')) {
   throw new Error('GitHub Pages SPA fallback dist/404.html is missing');
 }
 
+const fallback = readFileSync('dist/404.html', 'utf8');
+if (!fallback.includes("location.replace") || !fallback.includes("/course/pm1/P001/")) {
+  throw new Error('GitHub Pages fallback does not redirect lesson routes safely');
+}
+
 console.log(`Brand build verified with ${imageCount} visual assets.`);
