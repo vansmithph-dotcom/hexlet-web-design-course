@@ -1,0 +1,32 @@
+version: 1
+layouts:
+  - id: cover
+    purpose: lesson identity and hero
+  - id: hook
+    purpose: professional relevance
+  - id: why
+    purpose: causal challenge
+  - id: observable-criteria
+    purpose: visible/checkable criteria
+  - id: teacher-demo
+    purpose: demonstration sequence
+  - id: worked-example
+    purpose: evidence-based analysis
+  - id: boundary
+    purpose: limit unsupported conclusions
+  - id: compare-pair
+    purpose: controlled A/B comparison
+  - id: why-question
+    purpose: causal reasoning
+  - id: answer-upgrade
+    purpose: everyday-to-professional wording
+  - id: timed-observation
+    purpose: fast evidence search
+  - id: mini-debate
+    purpose: prioritization with evidence
+  - id: strong-conclusion
+    purpose: fact-consequence-action chain
+  - id: checklist
+    purpose: pre-work verification
+  - id: summary
+    purpose: observable result and transition
