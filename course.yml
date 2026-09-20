@@ -1,0 +1,12 @@
+id: hexlet-web-design
+title: Web Design
+level: SPO
+language: ru
+lesson_duration_minutes: 60
+source_of_truth: github
+lms: moodle
+pilot_lesson: P026
+publishing:
+  staging: true
+  production: false
+  moodle_sync: false
