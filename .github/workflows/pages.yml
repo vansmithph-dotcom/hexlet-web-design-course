@@ -34,13 +34,11 @@ jobs:
       - run: npm install
       - run: npm run validate
       - run: npm run build:p001
-      - name: Create site root
-        shell: bash
+      - name: Prepare Pages artifact
         run: |
-          set -e
-          mkdir -p site/P001
-          cp -a dist/P001/. site/P001/
-          printf '%s\n' '<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Web Design · ПМ1</title></head><body style="font-family:system-ui;background:#151618;color:#EEEEEC;padding:48px"><h1>Web Design · ПМ1</h1><p><a style="color:#D16FFF;font-size:24px" href="./P001/">Занятие 1 — Безопасность на рабочем месте</a></p></body></html>' > site/index.html
+          mkdir -p site
+          cp -R dist/P001 site/P001
+          cp dist/P001/index.html site/index.html
           touch site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
