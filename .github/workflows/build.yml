@@ -1,0 +1,28 @@
+name: Build pilot
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "lessons/P026/**"
+      - "package.json"
+      - "scripts/**"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - run: npm run validate
+      - run: npm run build:p026
+      - uses: actions/upload-artifact@v4
+        with:
+          name: P026-web
+          path: dist/P026
