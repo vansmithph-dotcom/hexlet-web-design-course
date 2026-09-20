@@ -23,6 +23,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -32,24 +35,16 @@ jobs:
       - run: npm run validate
       - run: npm run build:p001
       - name: Create site root
+        shell: bash
         run: |
+          set -e
           mkdir -p site/P001
-          cp -R dist/P001/. site/P001/
-          cat > site/index.html <<'EOF'
-          <!doctype html>
-          <html lang="ru">
-          <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Web Design — ПМ1</title></head>
-          <body style="font-family:system-ui;background:#151618;color:#EEEEEC;padding:48px">
-          <h1>Web Design · ПМ1</h1>
-          <p><a style="color:#D16FFF;font-size:24px" href="./P001/">Занятие 1 — Безопасность на рабочем месте</a></p>
-          </body></html>
-          EOF
+          cp -a dist/P001/. site/P001/
+          printf '%s\n' '<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Web Design · ПМ1</title></head><body style="font-family:system-ui;background:#151618;color:#EEEEEC;padding:48px"><h1>Web Design · ПМ1</h1><p><a style="color:#D16FFF;font-size:24px" href="./P001/">Занятие 1 — Безопасность на рабочем месте</a></p></body></html>' > site/index.html
+          touch site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
       - id: deployment
         uses: actions/deploy-pages@v4
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
