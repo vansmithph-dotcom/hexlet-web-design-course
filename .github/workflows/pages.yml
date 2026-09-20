@@ -38,8 +38,8 @@ jobs:
         run: |
           mkdir -p site
           mkdir -p site/P001
-          cp -R dist/. site/P001/
-          cp dist/index.html site/index.html
+          cp -R .pages-build/. site/P001/
+          cp .pages-build/index.html site/index.html
           touch site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
