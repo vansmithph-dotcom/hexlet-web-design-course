@@ -6,7 +6,7 @@ lesson: P001
 css: ../../theme/styles/index.css
 ---
 
-<div class="hx-eyebrow">Хекслет Колледж · ПМ1 · Сканирование и обработка графической информации</div>
+<div class="hx-eyebrow">ПМ1 · Сканирование и обработка графической информации</div>
 <div class="hx-cover-title">
   <div class="hx-eyebrow hx-accent">Занятие 1</div>
   <h1>Безопасность на рабочем месте при работе с графическим оборудованием</h1>
