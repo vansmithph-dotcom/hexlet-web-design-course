@@ -5,7 +5,9 @@
     "dev:p026": "slidev lessons/P026/slides.md --open",
     "build:p026": "slidev build lessons/P026/slides.md --out dist/P026",
     "export:p026": "slidev export lessons/P026/slides.md --output dist/P026.pdf",
-    "validate": "node scripts/validate.mjs"
+    "validate": "node scripts/validate.mjs",
+    "dev:master": "slidev templates/master/slides.md --open",
+    "build:master": "slidev build templates/master/slides.md --out dist/master"
   },
   "devDependencies": {
     "@slidev/cli": "latest",
