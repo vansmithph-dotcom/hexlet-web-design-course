@@ -1,0 +1,33 @@
+@import "../../theme/styles/index.css";
+
+.p032-process { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:30px; }
+.p032-process .hx-card { min-height:178px; padding:20px; }
+.p032-process h3 { color:var(--hexlet-accent-violet); font-size:24px; }
+.p032-process p { font-size:17px; line-height:1.28; }
+.p032-split { display:grid; grid-template-columns:1.08fr .92fr; gap:28px; margin-top:18px; }
+.p032-split > img { width:100%; height:300px; object-fit:cover; border-radius:18px; }
+.p032-split .hx-card { padding:20px; }
+.p032-split .hx-card p, .p032-split .hx-card li { font-size:18px; line-height:1.25; }
+.p032-pair { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:20px; }
+.p032-pair > div { background:var(--hexlet-surface); border:1px solid var(--hexlet-line); border-radius:18px; padding:14px; }
+.p032-pair img { width:100%; height:210px; object-fit:cover; border-radius:12px; }
+.p032-pair h3 { margin:12px 4px 4px; font-size:21px; }
+.p032-pair p { margin:0 4px; font-size:16px; line-height:1.25; }
+.p032-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:24px; }
+.p032-strip .hx-card { padding:14px; min-height:205px; }
+.p032-strip img { width:100%; height:98px; object-fit:cover; border-radius:11px; margin-bottom:10px; }
+.p032-strip h3 { font-size:20px; }
+.p032-strip p { font-size:15px; line-height:1.2; }
+.p032-questions { display:grid; grid-template-columns:.95fr 1.05fr; gap:28px; margin-top:18px; }
+.p032-questions img { width:100%; height:310px; object-fit:cover; border-radius:18px; }
+.p032-questions ol { margin:0; padding-left:28px; }
+.p032-questions li { font-size:18px; line-height:1.25; margin-bottom:8px; }
+.p032-checks { display:grid; grid-template-columns:1fr 1fr; gap:0 28px; margin-top:14px; }
+.p032-checks .hx-check h3 { font-size:19px; }
+.p032-checks .hx-check p { font-size:15px; }
+.slidev-layout:has(.p032-process) h1,
+.slidev-layout:has(.p032-split) h1,
+.slidev-layout:has(.p032-pair) h1,
+.slidev-layout:has(.p032-strip) h1,
+.slidev-layout:has(.p032-questions) h1,
+.slidev-layout:has(.p032-checks) h1 { font-size:40px; max-width:none; }

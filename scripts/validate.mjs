@@ -14,7 +14,8 @@ const required = [
   'lessons/P001/teacher.md',
   'lessons/P001/student.md',
   'lessons/P001/practice.md',
-  'lessons/P001/quiz.yml'
+  'lessons/P001/quiz.yml',
+  'lessons/P032/slides.md'
 ];
 
 let failed = false;
@@ -38,6 +39,13 @@ if (!failed) {
   const slides = readFileSync('lessons/P026/slides.md', 'utf8');
   if (!slides.includes('lesson: P026')) {
     console.error('INVALID: P026 slides frontmatter has no lesson id');
+    failed = true;
+  }
+
+  const p032 = readFileSync('lessons/P032/slides.md', 'utf8');
+  const p032Slides = p032.split(/\r?\n---\r?\n/).length;
+  if (!p032.includes('lesson: P032') || p032Slides < 15) {
+    console.error('INVALID: P032 must identify lesson P032 and contain at least 15 slides');
     failed = true;
   }
 }

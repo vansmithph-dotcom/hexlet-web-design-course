@@ -2,7 +2,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 let totalImages = 0;
-for (const lesson of ['P001', 'P031']) {
+for (const lesson of ['P001', 'P031', 'P032']) {
   const siteDir = join('dist/course/pm1', lesson);
   const assetsDir = join(siteDir, 'assets');
 
