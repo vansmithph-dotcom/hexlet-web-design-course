@@ -16,10 +16,12 @@
     "build:p032": "slidev build lessons/P032/slides.md --base /hexlet-web-design-course/course/pm1/P032/ --out ../../dist/course/pm1/P032",
     "prepare:site": "node scripts/prepare-site.mjs",
     "validate:brand-build": "node scripts/validate-built-brand.mjs",
-    "build:all": "npm run validate && npm run build:master && npm run build:p001 && npm run build:p031 && npm run build:p032 && npm run build:p026 && npm run prepare:site && npm run validate:brand-build"
+    "build:all": "npm run validate && npm run build:master && npm run build:p001 && npm run build:p031 && npm run build:p032 && npm run build:p026 && npm run prepare:site && npm run validate:brand-build",
+    "build:p001:pptx": "mkdir -p presentation-rework/P001/output && node presentation-rework/P001/source/build_p001_v3.js"
   },
   "devDependencies": {
     "@slidev/cli": "latest",
-    "@slidev/theme-default": "latest"
+    "@slidev/theme-default": "latest",
+    "pptxgenjs": "latest"
   }
 }
