@@ -9,9 +9,9 @@ writeFileSync('dist/404.html', `<!doctype html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Переход к курсу Hexlet</title>
     <script>
-      const course = '/hexlet-web-design-course/course/pm1/P001/';
       const home = '/hexlet-web-design-course/';
-      location.replace(location.pathname.includes('/course/pm1/P001/') ? course : home);
+      const lesson = location.pathname.match(/\/course\/pm1\/(P\d{3})\//);
+      location.replace(lesson ? '/hexlet-web-design-course/course/pm1/' + lesson[1] + '/' : home);
     </script>
   </head>
   <body><a href="/hexlet-web-design-course/">Открыть курс Hexlet</a></body>

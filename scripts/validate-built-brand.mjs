@@ -1,27 +1,31 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const siteDir = 'dist/course/pm1/P001';
-const assetsDir = join(siteDir, 'assets');
+let totalImages = 0;
+for (const lesson of ['P001', 'P031']) {
+  const siteDir = join('dist/course/pm1', lesson);
+  const assetsDir = join(siteDir, 'assets');
 
-if (!existsSync(join(siteDir, 'index.html'))) {
-  throw new Error('P001 index.html is missing');
-}
+  if (!existsSync(join(siteDir, 'index.html'))) {
+    throw new Error(`${lesson} index.html is missing`);
+  }
 
-const css = readdirSync(assetsDir)
-  .filter((name) => name.endsWith('.css'))
-  .map((name) => readFileSync(join(assetsDir, name), 'utf8'))
-  .join('\n');
+  const css = readdirSync(assetsDir)
+    .filter((name) => name.endsWith('.css'))
+    .map((name) => readFileSync(join(assetsDir, name), 'utf8'))
+    .join('\n');
 
-if (!css.includes('--hexlet-primary') || !css.includes('.hx-card')) {
-  throw new Error('Hexlet brand CSS is missing from the P001 build');
-}
+  if (!css.includes('--hexlet-primary') || !css.includes('.hx-card')) {
+    throw new Error(`Hexlet brand CSS is missing from the ${lesson} build`);
+  }
 
-const imageCount = readdirSync(assetsDir)
-  .filter((name) => /\.(?:png|jpe?g|webp|svg)$/i.test(name)).length;
+  const imageCount = readdirSync(assetsDir)
+    .filter((name) => /\.(?:png|jpe?g|webp|svg)$/i.test(name)).length;
 
-if (imageCount < 4) {
-  throw new Error(`Expected at least 4 visual assets, found ${imageCount}`);
+  if (imageCount < 4) {
+    throw new Error(`${lesson}: expected at least 4 visual assets, found ${imageCount}`);
+  }
+  totalImages += imageCount;
 }
 
 if (!existsSync('dist/404.html')) {
@@ -29,8 +33,8 @@ if (!existsSync('dist/404.html')) {
 }
 
 const fallback = readFileSync('dist/404.html', 'utf8');
-if (!fallback.includes("location.replace") || !fallback.includes("/course/pm1/P001/")) {
+if (!fallback.includes("location.replace") || !fallback.includes("/course/pm1/")) {
   throw new Error('GitHub Pages fallback does not redirect lesson routes safely');
 }
 
-console.log(`Brand build verified with ${imageCount} visual assets.`);
+console.log(`Brand builds verified with ${totalImages} visual assets.`);

@@ -3,10 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=./course/pm1/P001/">
   <title>Курс Web Design колледжа Hexlet</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, Arial, sans-serif; background:#151515; color:#f4f4f2; }
+    body { margin:0; min-height:100vh; background:radial-gradient(circle at 80% 10%,#312064 0,transparent 34%),#151515; }
+    main { max-width:1080px; margin:auto; padding:72px 32px; }
+    .brand { color:#d16fff; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { max-width:760px; font-size:clamp(42px,7vw,78px); line-height:.98; letter-spacing:-.05em; margin:28px 0 56px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+    a { color:inherit; text-decoration:none; border:1px solid #414141; border-radius:20px; padding:26px; background:rgba(255,255,255,.035); transition:.2s ease; }
+    a:hover { border-color:#7f61dd; transform:translateY(-3px); }
+    small { color:#a9a9a4; text-transform:uppercase; letter-spacing:.08em; }
+    h2 { font-size:28px; line-height:1.1; margin:18px 0 12px; }
+    p { color:#c7c7c2; line-height:1.5; }
+  </style>
 </head>
 <body>
-  <p><a href="./course/pm1/P001/">Открыть занятие П001</a></p>
+  <main>
+    <div class="brand">Хекслет Колледж</div>
+    <h1>Web Design · ПМ1</h1>
+    <div class="grid">
+      <a href="./course/pm1/P001/"><small>Занятие 01</small><h2>Безопасность на рабочем месте</h2><p>Риск, наблюдаемый признак и действие до начала работы.</p></a>
+      <a href="./course/pm1/P031/"><small>Занятие 31</small><h2>Photoshop: cinematic web-hero</h2><p>Обратимый master, широкий crop, text zone и web-export.</p></a>
+    </div>
+  </main>
 </body>
 </html>
